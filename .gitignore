@@ -50,4 +50,4 @@ jspm_packages
 yarn.lock
 
 # dist files
-quizy/dist/*
+dist/*
