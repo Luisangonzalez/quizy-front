@@ -21,6 +21,7 @@
     "no-access-missing-member": true,
     "invoke-injectable": true,
     "member-access": false,
+    "ordered-imports": false,
     "member-ordering": [
       true,
       "public-before-private",
