@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import '../../public/css/styles.css';
+import { ViewEncapsulation } from '@angular/core';
+
 @Component({
-  selector: 'my-app',
+  selector: 'quizy-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['../styles/main.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent { }
