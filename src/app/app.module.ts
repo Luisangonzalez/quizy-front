@@ -3,13 +3,14 @@ import { BrowserModule }  from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
-
+import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 // Root Angular2 Module
 @NgModule({
   // Imports modules we depend on
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
     // Declare components, directives, pipes
     declarations: [
