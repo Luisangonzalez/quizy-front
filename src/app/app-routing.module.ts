@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 export const routes: Routes = [
   // {
@@ -10,6 +11,7 @@ export const routes: Routes = [
   //   redirectTo: 'dashboard',
   // },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   // { path: 'characters', component: CharactersComponent, },
   // { path: '**', pathMatch: 'full', component: PageNotFoundComponent}
 ];
@@ -22,4 +24,4 @@ export const routes: Routes = [
 
 export class AppRoutingModule {}
 
-export const routedComponents = [LoginComponent];
+export const routedComponents = [ LoginComponent, RegisterComponent ];
