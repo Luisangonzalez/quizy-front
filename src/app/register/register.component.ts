@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-// import '../../public/css/styles.css';
+
 @Component({
 
     selector: 'my-register',
@@ -8,9 +8,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
     styleUrls: ['register.component.scss']
 })
 export class RegisterComponent {
-    // loginForm = new FormGroup ({
-    //   login: new FormControl()
-    // });
+
     registerForm: FormGroup;
 
     constructor(private fb: FormBuilder) {
@@ -20,7 +18,10 @@ export class RegisterComponent {
 
     createForm() {
         this.registerForm = this.fb.group({
-            register: ['', Validators.required],
+            name: ['', Validators.required],
+            lastname: ['', Validators.required],
+            username: ['', Validators.required],
+            email: ['', Validators.required],
             password: ['', Validators.required]
         });
     }
