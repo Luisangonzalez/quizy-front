@@ -32,9 +32,10 @@ export class RegisterComponent {
     }
 
     onSubmit() {
-        console.log('CLICK');
-        console.log(this.registerForm.value);
-        this.userService.getUsers()
-          .then((users) => console.log(users));
+        // console.log('CLICK');
+        // console.log(this.registerForm.value);
+        // this.userService.getUsers()
+        // .then((users) => console.log(users));
+        this.userService.create(this.registerForm.value).subscribe();
     }
 }
