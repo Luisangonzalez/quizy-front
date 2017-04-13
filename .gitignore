@@ -49,3 +49,6 @@ yarn.lock
 
 # dist files
 dist/*
+
+#Environment file
+.env
