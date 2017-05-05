@@ -28,8 +28,11 @@ export class LoginComponent {
     }
 
     onSubmit() {
+        this.auth.useJwtHelper();
+        console.log(this.auth.loggedIn());
         console.log('CLICK');
         console.log(this.loginForm.value);
         this.auth.login(this.loginForm.value);
+        console.log(this.auth.loggedIn());
     }
 }

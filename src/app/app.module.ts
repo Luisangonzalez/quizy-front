@@ -4,7 +4,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
+import { AuthModule } from './shared/auth.module';
+
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+
 // Root Angular2 Module
 @NgModule({
   // Imports modules we depend on
@@ -12,7 +15,8 @@ import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        HttpModule
+        HttpModule,
+        AuthModule
     ],
     // Declare components, directives, pipes
     declarations: [
@@ -20,7 +24,7 @@ import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
         routedComponents
     ],
     // Provider services to app root injector
-    // providers:[],
+    // providers: [],
     // Bootstrap a component
     bootstrap: [AppComponent]
 })
