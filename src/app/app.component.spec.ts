@@ -1,8 +1,19 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { routedComponents } from './app-routing.module';
+import { MockBackend } from '@angular/http/testing';
+
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { Http, BaseRequestOptions } from '@angular/http';
+
+import { AppComponent } from './app.component';
+import { routedComponents } from './app-routing.module';
+
+const mockHttpProvider = {
+    deps: [ MockBackend, BaseRequestOptions ],
+    useFactory: (backend: MockBackend, defaultOptions: BaseRequestOptions) => {
+        return new Http(backend, defaultOptions);
+    }
+};
 
 describe('App', () => {
     beforeEach(() => {
@@ -11,12 +22,13 @@ describe('App', () => {
                 AppComponent,
                 routedComponents,
             ],
-            // providers: [
-            //     App,
-            //     AppState,
-            //     Renderer,
-            //     { provide: Router, useClass: MockRouter }
-            // ],
+            providers: [
+              { provide: Http, useValue: mockHttpProvider },
+                // App,
+                // AppState,
+                // Renderer,
+                // { provide: Router, useClass: MockRouter }
+            ],
             imports: [
                 RouterTestingModule,
                 ReactiveFormsModule
