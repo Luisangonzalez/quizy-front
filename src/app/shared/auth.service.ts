@@ -14,7 +14,7 @@ export class AuthService {
 
 
     login(credentials: Credentials) {
-      console.log('cre', credentials);
+      // console.log('cre', credentials);
         this.http.post(this.backendUrl + '/login', credentials)
             .map((res) => res.json())
             .subscribe(
@@ -27,6 +27,10 @@ export class AuthService {
 
     loggedIn() {
       return tokenNotExpired('jwtToken');
+    }
+
+    logout() {
+      localStorage.removeItem('jwtToken');
     }
 
     useJwtHelper() {
